@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html id="html" lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- icon -->
+        <link rel="icon" type="image/x-icon" href="../../site_assets/assets/logo/CitoHubIcon.png">
+        <title id="site-title">MECST - 大学</title>
+        <meta name="description" content="A web app that makes it easy to write code.">
+        <!-- .webmanifest--> 
+        <meta name="theme-color" content="#1a1a1a"/>
+        <link rel="manifest" href="../../site_assets/manifest/webmanifest.json" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../site_assets/css/header.css" />
+        <link rel="stylesheet" href="../../site_assets/css/list.css" />
+        <!-- JS -->
+        <script src="../../site_assets/js/header.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="../../site_assets/js/post.js"></script>
+        <!-- code font for google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+        <!-- 国旗アイコンcss-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.3/css/flag-icons.min.css" rel="stylesheet">
+    </head>
+    <body onload="startSc()">
+        <header id="headerBackground" class="header--TuwRF">
+            <div>
+                <div class="header-leftArea">
+                    <div id="logoFxnxa" class="logo--Fxnxa header-site-logo-area">
+                        <a href="../../" aria-label="citohub-icon">
+                            <img id="citohub-icon" style="width: 50px; height: 50px;" src="../../site_assets/assets/logo/CitoHubIcon.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="site-title-text"><strong style="font-weight: bold; font-size: 18px;">MECST</strong></div>                    
+                </div>
+                <div class="mobileSearch--WI2Tv"></div>
+                <div class="LeftCen">
+                    <div class="LeftCenItem animeSreddtUpfadeIn"><i id="class_modeChange" class="fa-regular fa-sun" style="font-size: 20px;" onclick="class_modeChangeBtn()"></i></div>
+                    <div class="LeftCenItem animeSreddtUpfadeIn"><i id="languageChange" class="fa-solid fa-earth-asia" style="font-size: 20px;" onclick="languageChangeBtn()"></i></div>
+                    <div class="LeftCenItem animeSreddtUpfadeIn"><i id="languageChange" class="fa-brands fa-github" style="font-size: 20px;" onclick="links_github()"></i></div>
+                </div>
+                <div class="class_modeListBox">
+                    <div id="class_modeListArea" class="nav nav-masthead justify-content-center class_modeList">
+                        <div class="class_modeListAreaBoxs">
+                            <li class="nav-link link" href="" id="class_light" glot-model="light" onclick="class_modeChangeBtn('hide')">
+                                <span class="fa-solid fa-sun" style="color: var(--text-1);"></span>
+                                <a href="/" style="text-decoration: none;">light</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="class_dark" glot-model="dark" onclick="class_modeChangeBtn('hide')">
+                                <span class="fa-solid fa-moon fa-flip-horizontal" style="color: var(--text-1);"></span>
+                                <a href="/" style="text-decoration: none;">dark</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="languageListBox">
+                    <div id="languageListArea" class="nav nav-masthead justify-content-center languageList">
+                        <div class="languageListAreaBoxs">
+                            <li class="nav-link link" href="" id="ar" glot-model="sa" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-sa"></span>
+                                <a href="/" style="text-decoration: none;">اللغة العربية</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="zh" glot-model="cn" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-cn"></span>
+                                <a href="/" style="text-decoration: none;">中文</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="en" glot-model="us" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-us"></span>
+                                <a href="/" style="text-decoration: none;">English</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="id" glot-model="id" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-id"></span>
+                                <a href="/" style="text-decoration: none;">Bahasa Indonesia</a>
+                            </li>
+                            <li class="nav-link link" href="" id="ja" glot-model="jp" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-jp"></span>
+                                <a href="/" style="text-decoration: none;">日本語</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="ms" glot-model="my" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-my"></span>
+                                <a href="/" style="text-decoration: none;">Bahasa Melayu</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="es" glot-model="es" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-es"></span>
+                                <a href="/" style="text-decoration: none;">español</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="box overlay1"></div>
+        <main>
+            <div class="legacy-container">
+                <div class="card-column">
+                    <div class="tool-group">
+                        <a class="tool-card text-\[1\.17em\]" href="./">
+                            <h3 glot-model="Popular+Tools">ページの内容がありません</h3>
+                        </a>
+                        <div class="tool-body">
+                            <a class="tool-card" href="./">
+                                <h3 class="text-\[1\.17em\]" glot-model="webmanifest">
+                                    
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <!-- ページロードアニメーション-->
+    <div id="js-loader" class="loader"></div>
+    <script>
+        const loader = document.getElementById('js-loader');
+        window.addEventListener('load', () => {
+        const ms = 400;
+        loader.style.transition = 'opacity ' + ms + 'ms';
+
+        const loaderOpacity = function(){
+            loader.style.opacity = 0;
+        }
+        const loaderDisplay = function(){
+            loader.style.display = "none";
+        }
+            setTimeout(loaderOpacity, 1);
+            setTimeout(loaderDisplay, ms);
+        })
+    </script>
+
+    <!-- Glottologist読み込み -->
+    <script  src="../../site_assets/js/glottologist.js"></script>
+    <script>
+        const glot = new Glottologist();
+
+        // クッキーから言語情報を取得
+        if(navigator.cookieEnabled){ // クッキーがクッキーが使えるか確認
+            // クッキーを読み出す
+            const obj = convertCookieToObject(document.cookie);
+            if(obj !== ""){ //クッキーにデータがあるか
+                let jsonLang = obj.lang;
+                if(jsonLang = ""){
+                    glot.import("../../site_assets/json/glot-data.json").then(() => {
+                        glot.render();
+                    });
+                    let rootElement = document.documentElement;
+                    lang =(rootElement.lang);
+                    document.cookie = 'lang=' + lang+'; path=/';
+                }else{
+                    glot.render(jsonLang);
+                }
+            }else{
+                glot.import("../../site_assets/json/glot-data.json").then(() => {
+                    glot.render();
+                });
+                let rootElement = document.documentElement;
+                lang =(rootElement.lang);
+                document.cookie = 'lang=' + lang+'; path=/';
+            }
+        }
+
+        // Glottologistの処理
+
+        //JSONファイルの読み込み
+        document.addEventListener('DOMContentLoaded', function(){
+            // クッキーを読み出す
+            const obj = convertCookieToObject(document.cookie);
+            let jsonLang = obj.lang;
+            glot.import("../../site_assets/json/glot-data.json").then(() => {
+                glot.render(jsonLang);
+                setLangTextForm()
+            });
+            setLangTextForm()
+        });
+
+        /**
+        言語切り替え用のイベント処理
+        **/
+
+        const ar = document.getElementById('ar');
+        const zh = document.getElementById('zh');
+        const en = document.getElementById('en');
+        const id = document.getElementById('id');
+        const ja = document.getElementById('ja');
+        const ms = document.getElementById('ms');
+        const es = document.getElementById('es');
+
+        ar.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('ar');
+            langCiikiesSeve()
+        });
+        zh.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('zh');
+            langCiikiesSeve()
+        });
+        en.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('en');
+            langCiikiesSeve()
+        });
+        id.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('id');
+            langCiikiesSeve()
+        });
+        ja.addEventListener('click', e => {
+            e.preventDefault();
+            glot.render('ja');
+            langCiikiesSeve()
+        });
+        ms.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('ms');
+            langCiikiesSeve()
+        });
+        es.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('es');
+            langCiikiesSeve()
+        });
+
+        // ID翻訳
+        function setLangTextForm(){
+            let rootElement = document.documentElement;
+            lang =(rootElement.lang);
+
+        }
+
+        // 言語変更検知
+        function langCiikiesSeve(){
+            if(navigator.cookieEnabled){ // クッキーがクッキーが使えるか確認
+                let rootElement = document.documentElement;
+                lang =(rootElement.lang);
+                console.log(lang)
+                document.cookie = 'lang=' + lang+'; path=/';
+                // クッキーを読み出す
+                const obj = convertCookieToObject(document.cookie);
+            }
+            setLangTextForm()
+        };
+        //document.cookie = 'lang=; max-age=0'; // クッキーの削除
+
+
+
+        const class_mode_light = document.getElementById('class_light')
+        const class_mode_dark = document.getElementById('class_dark')
+
+        class_mode_light.addEventListener('click', e => {
+            e.preventDefault()
+            document.getElementById('html').className = ('light')
+            class_modeCiikiesSeve()
+        });
+        class_mode_dark.addEventListener('click', e => {
+            e.preventDefault()
+            document.getElementById('html').className = ('dark')
+            class_modeCiikiesSeve()
+        });
+
+
+        // クラスモード変更検知
+        function class_modeCiikiesSeve(){
+            if(navigator.cookieEnabled){ // クッキーがクッキーが使えるか確認
+                let rootElement = document.documentElement;
+                html_class =(rootElement.className);
+                document.cookie = 'html_class=' + html_class+'; path=/';
+                // クッキーを読み出す
+                const obj = convertCookieToObject(document.cookie);
+            }
+            setLangTextForm()
+        }
+
+
+        // クッキーの解析
+        function convertCookieToObject(cookies) {
+            const cookieItem = cookies.split(';');
+            const obj = {};
+            cookieItem.forEach((item) => {
+                // 「=」で分解
+                const element = item.split('=');
+                // キーを取得
+                const key = element[0].trim();
+                // バリューを取得
+                const value = decodeURIComponent(element[1]);
+                // 保存
+                obj[key] = value;
+            });
+            return obj;
+        }
+    </script>
+</html>

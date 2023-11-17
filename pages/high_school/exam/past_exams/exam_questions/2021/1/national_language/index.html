@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html id="html" lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- icon -->
+        <link rel="icon" type="image/x-icon" href="../../../../../../../../site_assets/assets/logo/CitoHubIcon.png">
+        <title id="site-title">MECST - 高等学校</title>
+        <meta name="description" content="A web app that makes it easy to write code.">
+        <!-- .webmanifest--> 
+        <meta name="theme-color" content="#1a1a1a"/>
+        <link rel="manifest" href="../../../../../../../../site_assets/manifest/webmanifest.json" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../../../../../../../site_assets/css/header.css" />
+        <link rel="stylesheet" href="../../../../../../../../site_assets/css/list.css" />
+        <link rel="stylesheet" href="../../../../../../../../site_assets/css/button.css" />
+        <!-- JS -->
+        <script src="../../../../../../../../site_assets/js/header.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="../../../../../../../../site_assets/js/post.js"></script>
+        <!-- code font for google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
+        <!-- 国旗アイコンcss-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.3/css/flag-icons.min.css" rel="stylesheet">
+    </head>
+    <body onload="startSc()">
+        <header id="headerBackground" class="header--TuwRF">
+            <div>
+                <div class="header-leftArea">
+                    <div id="logoFxnxa" class="logo--Fxnxa header-site-logo-area">
+                        <a href="../../../../../../../../" aria-label="citohub-icon">
+                            <img id="citohub-icon" style="width: 50px; height: 50px;" src="../../../../../../../../site_assets/assets/logo/CitoHubIcon.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="site-title-text"><strong style="font-weight: bold; font-size: 18px;">MECST</strong></div>                    
+                </div>
+                <div class="mobileSearch--WI2Tv"></div>
+                <div class="LeftCen">
+                    <div class="LeftCenItem animeSreddtUpfadeIn"><i id="class_modeChange" class="fa-regular fa-sun" style="font-size: 20px;" onclick="class_modeChangeBtn()"></i></div>
+                    <div class="LeftCenItem animeSreddtUpfadeIn"><i id="languageChange" class="fa-solid fa-earth-asia" style="font-size: 20px;" onclick="languageChangeBtn()"></i></div>
+                    <div class="LeftCenItem animeSreddtUpfadeIn"><i id="languageChange" class="fa-brands fa-github" style="font-size: 20px;" onclick="links_github()"></i></div>
+                </div>
+                <div class="class_modeListBox">
+                    <div id="class_modeListArea" class="nav nav-masthead justify-content-center class_modeList">
+                        <div class="class_modeListAreaBoxs">
+                            <li class="nav-link link" href="" id="class_light" glot-model="light" onclick="class_modeChangeBtn('hide')">
+                                <span class="fa-solid fa-sun" style="color: var(--text-1);"></span>
+                                <a href="/" style="text-decoration: none;">light</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="class_dark" glot-model="dark" onclick="class_modeChangeBtn('hide')">
+                                <span class="fa-solid fa-moon fa-flip-horizontal" style="color: var(--text-1);"></span>
+                                <a href="/" style="text-decoration: none;">dark</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="languageListBox">
+                    <div id="languageListArea" class="nav nav-masthead justify-content-center languageList">
+                        <div class="languageListAreaBoxs">
+                            <li class="nav-link link" href="" id="ar" glot-model="sa" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-sa"></span>
+                                <a href="/" style="text-decoration: none;">اللغة العربية</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="zh" glot-model="cn" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-cn"></span>
+                                <a href="/" style="text-decoration: none;">中文</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="en" glot-model="us" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-us"></span>
+                                <a href="/" style="text-decoration: none;">English</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="id" glot-model="id" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-id"></span>
+                                <a href="/" style="text-decoration: none;">Bahasa Indonesia</a>
+                            </li>
+                            <li class="nav-link link" href="" id="ja" glot-model="jp" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-jp"></span>
+                                <a href="/" style="text-decoration: none;">日本語</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="ms" glot-model="my" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-my"></span>
+                                <a href="/" style="text-decoration: none;">Bahasa Melayu</a>
+                            </li>
+                            <li  class="nav-link link" href="" id="es" glot-model="es" onclick="languageChangeBtn('hide')">
+                                <span class="flag-icon flag-icon-es"></span>
+                                <a href="/" style="text-decoration: none;">español</a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main id="html_exam_page_step_0">
+            <div class="box overlay1"></div>
+            <div>
+                <div class="legacy-container">
+                    <div class="card-column">
+                        <div class="tool-group">
+                            <a class="tool-card text-\[1\.17em\]">
+                                <h3 glot-model="">令和3年度第1回高等学校卒業程度認定試験問題 国語</h3>
+                            </a>
+                            <div class="tool-body">
+                                <a class="tool-card" href="https://www.mext.go.jp/content/20230426-mxt_syogai02-mext_1411255_01kokugo.pdf" target="_blank">
+                                    <h3 class="text-\[1\.17em\]">
+                                        文部科学省 問題用紙PDF
+                                    </h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="legacy-container">
+                    <div class="card-column">
+                        <div class="tool-group">
+                            <div class="tool-card text-\[1\.17em\]" style="display:table; margin: 10px 5px;">
+                                <div style="text-align: center;">
+                                    <h1>国語</h1>
+                                </div>
+                                <div style="text-align: left;">
+                                    <p style="margin: 0 0 10px 0;">注意事項</p>
+                                    <div style="margin: 8px;">
+                                        <div style="display: flex;">
+                                            <h4 style="margin: 0 10px 0 0;">1</h4>
+                                            <p>タイマーが開始するまで待つこと</p>
+                                        </div>
+                                    </div>
+                                    <div style="margin: 8px;">
+                                        <div style="display: flex;">
+                                            <h4 style="margin: 0 10px 0 0;">2</h4>
+                                            <p>この問題冊子は28ページである。試験中に問題冊子の印刷不鮮明，ページの落丁・乱丁及び汚れ等に気付いた場合は，手を挙げて監督者に知らせること。</p>
+                                        </div>
+                                    </div>
+                                    <div style="margin: 8px;">
+                                        <div style="display: flex;">
+                                            <h4 style="margin: 0 10px 0 0;">3</h4>
+                                            <p>試験開始の前に，説明文の指示に従って，解答用紙の該当欄に以下の内容をそれぞれ正しく記入し，選択すること。</p>
+                                        </div>
+                                        <div style="margin: 0 0 0 20px;">
+                                            <li>
+                                                &#9312氏名欄
+                                                <p style="margin: 0 0 0 37px;">
+                                                    氏名を記入すること。
+                                                </p>
+                                            </li>
+                                            <li>
+                                                &#9313受験番号，&#9314生年月日，&#9315受験地欄
+                                                <p style="margin: 0 0 0 37px;">
+                                                    受験番号，生年月日を記入し，さらにマーク欄に受験番号（数字），生年月日（年号・数字）， 受験地を選択すること。
+                                                </p>
+                                            </li>
+                                        </div>
+                                    </div>
+                                    <div style="margin: 8px;">
+                                        <div style="display: flex;">
+                                            <h4 style="margin: 0 10px 0 0;">4</h4>
+                                            <p>受験番号，生年月日，受験地が正しく選択されていない場合は，採点できないことがある。</p>
+                                        </div>
+                                    </div>
+                                    <div style="margin: 8px;">
+                                        <div style="display: flex;">
+                                            <h4 style="margin: 0 10px 0 0;">5</h4>
+                                            <p>解答は，解答用紙の解答欄を選択すること。例えば，10と表示のある解答番号に対して2と解答する場合は，次の（例）のように解答番号10の解答欄の2を選択すること。</p>
+                                        </div>
+                                        <div style="margin: 0 0 0 20px;">
+                                            <div class="legacy-container">
+                                                <div class="card-column">
+                                                    <div class="tool-group user_select_off">
+                                                        <a class="tool-card text-\[1\.17em\]">
+                                                            <h3>10</h3>
+                                                        </a>
+                                                        <div class="tool-body">
+                                                            <div class="tool-card">
+                                                                <legend>解答欄</legend>
+                                                                <div style="pointer-events: none;">
+                                                                    <input type="radio" id="test_10-1" name="drone" value="test_10-1"/>
+                                                                    <label for="test_10-1">1</label>
+                                                                    <input type="radio" id="test_10-2" name="drone" value="test_10-2" checked/>
+                                                                    <label for="test_10-2">2</label>
+                                                                    <input type="radio" id="test_10-3" name="drone" value="test_10-3" />
+                                                                    <label for="test_10-3">3</label>
+                                                                    <input type="radio" id="test_10-4" name="drone" value="test_10-4" />
+                                                                    <label for="test_10-4">4</label>
+                                                                    <input type="radio" id="test_10-5" name="drone" value="test_10-5" />
+                                                                    <label for="test_10-5">5</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="margin: 8px;">
+                                        <div style="display: flex;">
+                                            <h4 style="margin: 0 10px 0 0;">6</h4>
+                                            <p>試験終了後，結果を待つこと</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: center; margin: 0 0 50px 0;">
+                                <button class="user_select_off button_blue_light_animation_2" style="margin: 15px 0 0 20px; width: 250px;height: 30px;line-height: 5px;" onclick="links_pdf_exam_2021_1_national_language()">試験問題をPDFで見る</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="legacy-container" style="margin-bottom: 100px;">
+                    <div style="text-align: center;">
+                        <button class="user_select_off button_blue_light_animation_1" onclick="exam_page_step_btn(1),scrollToTop()">試験を開始する</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <main id="html_exam_page_step_1" style="display: none;">
+            <div class="box overlay1"></div>
+            <div>
+                <form>
+                    <div class="legacy-container">
+                        <div class="card-column">
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>1</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-1_1" name="1-1" value="1-1_1" checked/>
+                                            <label for="1-1_1">1</label>
+                                            <input type="radio" id="1-1_2" name="1-1" value="1-1_2" />
+                                            <label for="1-1_2">2</label>
+                                            <input type="radio" id="1-1_3" name="1-1" value="1-1_3" />
+                                            <label for="1-1_3">3</label>
+                                            <input type="radio" id="1-1_4" name="1-1" value="1-1_4" />
+                                            <label for="1-1_4">4</label>
+                                            <input type="radio" id="1-1_5" name="1-1" value="1-1_5" />
+                                            <label for="1-1_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>2</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-2_1" name="1-2" value="1-2_1" checked/>
+                                            <label for="1-2_1">1</label>
+                                            <input type="radio" id="1-2_2" name="1-2" value="1-2_2" />
+                                            <label for="1-2_2">2</label>
+                                            <input type="radio" id="1-2_3" name="1-2" value="1-2_3" />
+                                            <label for="1-2_3">3</label>
+                                            <input type="radio" id="1-2_4" name="1-2" value="1-2_4" />
+                                            <label for="1-2_4">4</label>
+                                            <input type="radio" id="1-2_5" name="1-2" value="1-2_5" />
+                                            <label for="1-2_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>3</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-3_1" name="1-3" value="1-3_1" checked/>
+                                            <label for="1-3_1">1</label>
+                                            <input type="radio" id="1-3_2" name="1-3" value="1-3_2" />
+                                            <label for="1-3_2">2</label>
+                                            <input type="radio" id="1-3_3" name="1-3" value="1-3_3" />
+                                            <label for="1-3_3">3</label>
+                                            <input type="radio" id="1-3_4" name="1-3" value="1-3_4" />
+                                            <label for="1-3_4">4</label>
+                                            <input type="radio" id="1-3_5" name="1-3" value="1-3_5" />
+                                            <label for="1-3_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>4</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-4_1" name="1-4" value="1-4_1" checked/>
+                                            <label for="1-4_1">1</label>
+                                            <input type="radio" id="1-4_2" name="1-4" value="1-4_2" />
+                                            <label for="1-4_2">2</label>
+                                            <input type="radio" id="1-4_3" name="1-4" value="1-4_3" />
+                                            <label for="1-4_3">3</label>
+                                            <input type="radio" id="1-4_4" name="1-4" value="1-4_4" />
+                                            <label for="1-4_4">4</label>
+                                            <input type="radio" id="1-4_5" name="1-4" value="1-4_5" />
+                                            <label for="1-4_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>5</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-5_1" name="1-5" value="1-5_1" checked/>
+                                            <label for="1-5_1">1</label>
+                                            <input type="radio" id="1-5_2" name="1-5" value="1-5_2" />
+                                            <label for="1-5_2">2</label>
+                                            <input type="radio" id="1-5_3" name="1-5" value="1-5_3" />
+                                            <label for="1-5_3">3</label>
+                                            <input type="radio" id="1-5_4" name="1-5" value="1-5_4" />
+                                            <label for="1-5_4">4</label>
+                                            <input type="radio" id="1-5_5" name="1-5" value="1-5_5" />
+                                            <label for="1-5_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>6</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-6_1" name="1-6" value="1-6_1" checked/>
+                                            <label for="1-6_1">1</label>
+                                            <input type="radio" id="1-6_2" name="1-6" value="1-6_2" />
+                                            <label for="1-6_2">2</label>
+                                            <input type="radio" id="1-6_3" name="1-6" value="1-6_3" />
+                                            <label for="1-6_3">3</label>
+                                            <input type="radio" id="1-6_4" name="1-6" value="1-6_4" />
+                                            <label for="1-6_4">4</label>
+                                            <input type="radio" id="1-6_5" name="1-6" value="1-6_5" />
+                                            <label for="1-6_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>7</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-7_1" name="1-7" value="1-7_1" checked/>
+                                            <label for="1-7_1">1</label>
+                                            <input type="radio" id="1-7_2" name="1-7" value="1-7_2" />
+                                            <label for="1-7_2">2</label>
+                                            <input type="radio" id="1-7_3" name="1-7" value="1-7_3" />
+                                            <label for="1-7_3">3</label>
+                                            <input type="radio" id="1-7_4" name="1-7" value="1-7_4" />
+                                            <label for="1-7_4">4</label>
+                                            <input type="radio" id="1-7_5" name="1-7" value="1-7_5" />
+                                            <label for="1-7_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>8</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-8_1" name="1-8" value="1-8_1" checked/>
+                                            <label for="1-8_1">1</label>
+                                            <input type="radio" id="1-8_2" name="1-8" value="1-8_2" />
+                                            <label for="1-8_2">2</label>
+                                            <input type="radio" id="1-8_3" name="1-8" value="1-8_3" />
+                                            <label for="1-8_3">3</label>
+                                            <input type="radio" id="1-8_4" name="1-8" value="1-8_4" />
+                                            <label for="1-8_4">4</label>
+                                            <input type="radio" id="1-8_5" name="1-8" value="1-8_5" />
+                                            <label for="1-8_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>9</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-9_1" name="1-9" value="1-9_1" checked/>
+                                            <label for="1-9_1">1</label>
+                                            <input type="radio" id="1-9_2" name="1-9" value="1-9_2" />
+                                            <label for="1-9_2">2</label>
+                                            <input type="radio" id="1-9_3" name="1-9" value="1-9_3" />
+                                            <label for="1-9_3">3</label>
+                                            <input type="radio" id="1-9_4" name="1-9" value="1-9_4" />
+                                            <label for="1-9_4">4</label>
+                                            <input type="radio" id="1-9_5" name="1-9" value="1-9_5" />
+                                            <label for="1-9_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>10</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-10_1" name="1-10" value="1-10_1" checked/>
+                                            <label for="1-10_1">1</label>
+                                            <input type="radio" id="1-10_2" name="1-10" value="1-10_2" />
+                                            <label for="1-10_2">2</label>
+                                            <input type="radio" id="1-10_3" name="1-10" value="1-10_3" />
+                                            <label for="1-10_3">3</label>
+                                            <input type="radio" id="1-10_4" name="1-10" value="1-10_4" />
+                                            <label for="1-10_4">4</label>
+                                            <input type="radio" id="1-10_5" name="1-10" value="1-10_5" />
+                                            <label for="1-10_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>11</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-11_1" name="1-11" value="1-11_1" checked/>
+                                            <label for="1-11_1">1</label>
+                                            <input type="radio" id="1-11_2" name="1-11" value="1-11_2" />
+                                            <label for="1-11_2">2</label>
+                                            <input type="radio" id="1-11_3" name="1-11" value="1-11_3" />
+                                            <label for="1-11_3">3</label>
+                                            <input type="radio" id="1-11_4" name="1-11" value="1-11_4" />
+                                            <label for="1-11_4">4</label>
+                                            <input type="radio" id="1-11_5" name="1-11" value="1-11_5" />
+                                            <label for="1-11_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>12</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-12_1" name="1-12" value="1-12_1" checked/>
+                                            <label for="1-12_1">1</label>
+                                            <input type="radio" id="1-12_2" name="1-12" value="1-12_2" />
+                                            <label for="1-12_2">2</label>
+                                            <input type="radio" id="1-12_3" name="1-12" value="1-12_3" />
+                                            <label for="1-12_3">3</label>
+                                            <input type="radio" id="1-12_4" name="1-12" value="1-12_4" />
+                                            <label for="1-12_4">4</label>
+                                            <input type="radio" id="1-12_5" name="1-12" value="1-12_5" />
+                                            <label for="1-12_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>13</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-13_1" name="1-13" value="1-13_1" checked/>
+                                            <label for="1-13_1">1</label>
+                                            <input type="radio" id="1-13_2" name="1-13" value="1-13_2" />
+                                            <label for="1-13_2">2</label>
+                                            <input type="radio" id="1-13_3" name="1-13" value="1-13_3" />
+                                            <label for="1-13_3">3</label>
+                                            <input type="radio" id="1-13_4" name="1-13" value="1-13_4" />
+                                            <label for="1-13_4">4</label>
+                                            <input type="radio" id="1-13_5" name="1-13" value="1-13_5" />
+                                            <label for="1-13_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>14</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-14_1" name="1-14" value="1-14_1" checked/>
+                                            <label for="1-14_1">1</label>
+                                            <input type="radio" id="1-14_2" name="1-14" value="1-14_2" />
+                                            <label for="1-14_2">2</label>
+                                            <input type="radio" id="1-14_3" name="1-14" value="1-14_3" />
+                                            <label for="1-14_3">3</label>
+                                            <input type="radio" id="1-14_4" name="1-14" value="1-14_4" />
+                                            <label for="1-14_4">4</label>
+                                            <input type="radio" id="1-14_5" name="1-14" value="1-14_5" />
+                                            <label for="1-14_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>15</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-15_1" name="1-15" value="1-15_1" checked/>
+                                            <label for="1-15_1">1</label>
+                                            <input type="radio" id="1-15_2" name="1-15" value="1-15_2" />
+                                            <label for="1-15_2">2</label>
+                                            <input type="radio" id="1-15_3" name="1-15" value="1-15_3" />
+                                            <label for="1-15_3">3</label>
+                                            <input type="radio" id="1-15_4" name="1-15" value="1-15_4" />
+                                            <label for="1-15_4">4</label>
+                                            <input type="radio" id="1-15_5" name="1-15" value="1-15_5" />
+                                            <label for="1-15_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>16</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-16_1" name="1-16" value="1-16_1" checked/>
+                                            <label for="1-16_1">1</label>
+                                            <input type="radio" id="1-16_2" name="1-16" value="1-16_2" />
+                                            <label for="1-16_2">2</label>
+                                            <input type="radio" id="1-16_3" name="1-16" value="1-16_3" />
+                                            <label for="1-16_3">3</label>
+                                            <input type="radio" id="1-16_4" name="1-16" value="1-16_4" />
+                                            <label for="1-16_4">4</label>
+                                            <input type="radio" id="1-16_5" name="1-16" value="1-16_5" />
+                                            <label for="1-16_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>17</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-17_1" name="1-17" value="1-17_1" checked/>
+                                            <label for="1-17_1">1</label>
+                                            <input type="radio" id="1-17_2" name="1-17" value="1-17_2" />
+                                            <label for="1-17_2">2</label>
+                                            <input type="radio" id="1-17_3" name="1-17" value="1-17_3" />
+                                            <label for="1-17_3">3</label>
+                                            <input type="radio" id="1-17_4" name="1-17" value="1-17_4" />
+                                            <label for="1-17_4">4</label>
+                                            <input type="radio" id="1-17_5" name="1-17" value="1-17_5" />
+                                            <label for="1-17_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>18</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-18_1" name="1-18" value="1-18_1" checked/>
+                                            <label for="1-18_1">1</label>
+                                            <input type="radio" id="1-18_2" name="1-18" value="1-18_2" />
+                                            <label for="1-18_2">2</label>
+                                            <input type="radio" id="1-18_3" name="1-18" value="1-18_3" />
+                                            <label for="1-18_3">3</label>
+                                            <input type="radio" id="1-18_4" name="1-18" value="1-18_4" />
+                                            <label for="1-18_4">4</label>
+                                            <input type="radio" id="1-18_5" name="1-18" value="1-18_5" />
+                                            <label for="1-18_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>19</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-19_1" name="1-19" value="1-19_1" checked/>
+                                            <label for="1-19_1">1</label>
+                                            <input type="radio" id="1-19_2" name="1-19" value="1-19_2" />
+                                            <label for="1-19_2">2</label>
+                                            <input type="radio" id="1-19_3" name="1-19" value="1-19_3" />
+                                            <label for="1-19_3">3</label>
+                                            <input type="radio" id="1-19_4" name="1-19" value="1-19_4" />
+                                            <label for="1-19_4">4</label>
+                                            <input type="radio" id="1-19_5" name="1-19" value="1-19_5" />
+                                            <label for="1-19_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>20</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-20_1" name="1-20" value="1-20_1" checked/>
+                                            <label for="1-20_1">1</label>
+                                            <input type="radio" id="1-20_2" name="1-20" value="1-20_2" />
+                                            <label for="1-20_2">2</label>
+                                            <input type="radio" id="1-20_3" name="1-20" value="1-20_3" />
+                                            <label for="1-20_3">3</label>
+                                            <input type="radio" id="1-20_4" name="1-20" value="1-20_4" />
+                                            <label for="1-20_4">4</label>
+                                            <input type="radio" id="1-20_5" name="1-20" value="1-20_5" />
+                                            <label for="1-20_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>21</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-21_1" name="1-21" value="1-21_1" checked/>
+                                            <label for="1-21_1">1</label>
+                                            <input type="radio" id="1-21_2" name="1-21" value="1-21_2" />
+                                            <label for="1-21_2">2</label>
+                                            <input type="radio" id="1-21_3" name="1-21" value="1-21_3" />
+                                            <label for="1-21_3">3</label>
+                                            <input type="radio" id="1-21_4" name="1-21" value="1-21_4" />
+                                            <label for="1-21_4">4</label>
+                                            <input type="radio" id="1-21_5" name="1-21" value="1-21_5" />
+                                            <label for="1-21_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>22</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>解答欄</legend>
+                                        <div>
+                                            <input type="radio" id="1-22_1" name="1-22" value="1-22_1" checked/>
+                                            <label for="1-22_1">1</label>
+                                            <input type="radio" id="1-22_2" name="1-22" value="1-22_2" />
+                                            <label for="1-22_2">2</label>
+                                            <input type="radio" id="1-22_3" name="1-22" value="1-22_3" />
+                                            <label for="1-22_3">3</label>
+                                            <input type="radio" id="1-22_4" name="1-22" value="1-22_4" />
+                                            <label for="1-22_4">4</label>
+                                            <input type="radio" id="1-22_5" name="1-22" value="1-22_5" />
+                                            <label for="1-22_5">5</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div style="text-align: center;display: none;">
+                            <pre id="log"></pre>
+                        </div>
+                    </div>
+                    <div class="legacy-container" style="margin-bottom: 100px;">
+                        <div style="text-align: center;">
+                            <button class="user_select_off button_blue_light_animation_1" onclick="exam_page_step_btn(2),scrollToTop()">回答を提出する</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script>
+            var exam_point = 0;
+            var exam_point_lank = "C";
+            var exam_all_data = "";
+
+
+            var exam_page_step = 0;
+
+            function exam_page_step_btn(page_step){
+                exam_page_step = page_step
+                exam_page_step =  exam_page_step - 0;
+                if(page_step === 0){
+                    document.getElementById('html_exam_page_step_0').style.display = 'block'
+                    document.getElementById('html_exam_page_step_1').style.display = 'none'
+                    document.getElementById('html_exam_page_step_2').style.display = 'none'
+                }else{
+                    if(page_step === 1){
+                        document.getElementById('html_exam_page_step_0').style.display = 'none'
+                        document.getElementById('html_exam_page_step_1').style.display = 'block'
+                        document.getElementById('html_exam_page_step_2').style.display = 'none'
+
+                        exam_point = 0;
+                        exam_point_lank = "C";
+                        exam_all_data = "";
+                    }else{
+                        if(page_step === 2){
+                            document.getElementById('html_exam_page_step_0').style.display = 'none'
+                            document.getElementById('html_exam_page_step_1').style.display = 'none'
+                            document.getElementById('html_exam_page_step_2').style.display = 'block'
+                        }
+                    }
+                }
+            }
+
+            window.addEventListener('DOMContentLoaded', function(){
+                // 1秒後に実行
+                setTimeout(() => {
+                    exam_page_step_btn(0)
+                }, 1000);
+            });
+
+
+            var exam_answer = {
+                "1-1": {
+                    "answer":"1-1_4",
+                    "point":"2"
+                },
+                "1-2": {
+                    "answer":"1-2_3",
+                    "point":"2"
+                },
+                "1-3":{
+                    "answer":"1-3_5",
+                    "point":"2"
+                },
+                "1-4":{
+                    "answer":"1-4_5",
+                    "point":"4"
+                },
+                "1-5":{
+                    "answer":"1-5_4",
+                    "point":"4"
+                },
+                "1-6":{
+                    "answer":"1-6_1",
+                    "point":"4"
+                },
+                "1-7":{
+                    "answer":"1-7_2",
+                    "point":"4"
+                },
+                "1-8":{
+                    "answer":"1-8_2",
+                    "point":"8"
+                },
+                "1-9":{
+                    "answer":"1-9_2",
+                    "point":"5"
+                },
+                "1-10":{
+                    "answer":"1-10_1",
+                    "point":"5"
+                },
+                "1-11":{
+                    "answer":"1-11_1",
+                    "point":"5"
+                },
+                "1-12":{
+                    "answer":"1-12_2",
+                    "point":"5"
+                },
+                "1-13":{
+                    "answer":"1-13_3",
+                    "point":"5"
+                },
+                "1-14":{
+                    "answer":"1-14_5",
+                    "point":"5"
+                },
+                "1-15":{
+                    "answer":"1-15_3",
+                    "point":"5"
+                },
+                "1-16":{
+                    "answer":"1-16_4",
+                    "point":"5"
+                },
+                "1-17":{
+                    "answer":"1-17_2",
+                    "point":"5"
+                },
+                "1-18":{
+                    "answer":"1-18_5",
+                    "point":"5"
+                },
+                "1-19":{
+                    "answer":"1-19_3",
+                    "point":"5"
+                },
+                "1-20":{
+                    "answer":"1-20_1",
+                    "point":"5"
+                },
+                "1-21":{
+                    "answer":"1-21_4",
+                    "point":"5"
+                },
+                "1-22":{
+                    "answer":"1-22_2",
+                    "point":"5"
+                },
+            }
+
+            const form = document.querySelector("form");
+            const log = document.querySelector("#log");
+
+            form.addEventListener(
+                "submit",
+                (event) => {
+                    const data = new FormData(form);
+                    let output = "";
+                    let point = 0;
+                    for (const entry of data) {
+                        var data_4710470 = `${entry[0]}`;
+                        //console.log('問題' + data_4710470)
+                        var data_4710471 = `${entry[1]}`;
+                        //console.log('回答' + data_4710471)
+                        var data_4710400 = exam_answer[data_4710470].answer
+                        //console.log('正解' + data_4710400)
+                        var data_4710401 = exam_answer[data_4710470].point
+                        data_4710401 = data_4710401 - 0;
+                        //console.log('点数' + data_4710401)
+                        if(data_4710470 === '1-22'){
+                            if(data_4710471 === data_4710400){
+                                output = `${output}` + `"` + `${entry[0]}":{"answer":"ok","point":"` + data_4710401 + `"}`
+                                exam_point = exam_point + data_4710401;
+                                //console.log('point : ' + exam_point)
+                            }else{
+                                output = `${output}` + `"` + `${entry[0]}":{"answer":"no","point":"0"}`
+                            }
+                        }else{
+                            if(data_4710471 === data_4710400){
+                                output = `${output}` + `"` + `${entry[0]}":{"answer":"ok","point":"` + data_4710401 + `"},`
+                                exam_point = exam_point + data_4710401;
+                                //console.log('point : ' + exam_point)
+                            }else{
+                                output = `${output}` + `"` + `${entry[0]}":{"answer":"no","point":"0"},`
+                            }
+                        }
+                    }
+                    output = '{' + output + '}';
+                    output = JSON.parse(output);
+                    exam_all_data = output;
+                    log.innerText = output + '\nPoint:' + exam_point;
+                    event.preventDefault();
+
+                    if(exam_point >= 80){
+                        exam_point_lank = "A";
+                    }else{
+                        if(exam_point >= 60){
+                            exam_point_lank = "B";
+                        }else{
+                            if(exam_point <= 59)
+                            exam_point_lank = "C";
+                        }
+                    }
+                },
+                false,
+            );
+
+            let d = new Date();
+            var FullYear = d.getFullYear()
+            window.setInterval(exam_func, 1);
+            function exam_func(){
+                document.getElementById('FullYear_box').innerHTML = FullYear;
+                document.getElementById('exam_point_lank_box').innerHTML = exam_point_lank;
+                document.getElementById('exam_point_box').innerHTML = exam_point;
+            }
+        </script>
+        <main id="html_exam_page_step_2" style="display: none;">
+            <div class="box overlay1"></div>
+            <div>
+                <div class="legacy-container">
+                    <div class="card-column">
+                        <div class="tool-group user_select_off">
+                            <div class="tool-card text-\[1\.17em\]" style="display:table; margin: 30px 10px;">
+                                <div style="text-align: center;">
+                                    <h1 style="font-size: 50px;">国語</h1>
+                                    <h2>令和3年度第1回高等学校卒業程度認定試験問題回答結果</h2>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div class="legacy-container">
+                                        <div class="card-column">
+                                            <div class="tool-group">
+                                                <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>年度：</h2>
+                                                    <h2 id="FullYear_box" style="color: var(--text-3);"></h2>
+                                                </a>
+                                            </div>
+                                            <div class="tool-group">
+                                                <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>評点：</h2>
+                                                    <h2 id="exam_point_lank_box" style="color: var(--text-3);"></h2>
+                                                </a>
+                                                <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>点数：</h2>
+                                                    <h2 id="exam_point_box" style="color: var(--text-3);"></h2>
+                                                    <h2 style="color: var(--diff-renamed)">/100</h2>
+                                                </a>
+                                            </div>
+                                            <div style="text-align: left; margin: 20px 0;">
+                                                <p style="margin: 0 0 10px 0;">注意事項</p>
+                                                <div style="margin: 8px;">
+                                                    <div style="display: flex;">
+                                                        <h4 style="margin: 0 10px 0 0;">1</h4>
+                                                        <p>評点は100点満点で、A：80 ~ 100、B：60 ~ 79、C：合格点 ~ 59</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="legacy-container" style="margin-bottom: 100px;">
+                    <div style="text-align: center;">
+                        <button class="user_select_off button_blue_light_animation_1" onclick="exam_page_step_btn(0),scrollToTop()">ページを閉じる</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <input type="checkbox" id="leftActionsBtn" style="display: none;">
+        <div class="popup-actions left-actions" style="--offset: 50px;" id="left-actions">
+            <div class="popup-action action-project shown tooltipped tip-ne" aria-label="editor sidebar">
+                <label for="leftActionsBtn">
+                    <svg id="leftActionsShow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" style="display: none;">
+                        <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+                    </svg>
+                    <svg id="leftActionsHide" style="display: block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd" d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z"></path>
+                    </svg>
+                </label>
+            </div>
+        </div>
+        <script src="../../../../../../../../site_assets/js/sidebar.js"></script>
+        <div id="popup-project" class="popup-project">
+            <div class="popup-project_space_68px"></div>
+            <div class="file-view">
+                <h1>国語</h1>
+                <button class="user_select_off button_blue_light_animation_2" style="margin: 15px 0 0 20px; width: 250px;height: 30px;line-height: 5px;" onclick="links_pdf_exam_2021_1_national_language()">試験問題をPDFで見る</button>
+                <script>function links_pdf_exam_2021_1_national_language(){window.open("https://www.mext.go.jp/content/20230426-mxt_syogai02-mext_1411255_01kokugo.pdf", "mozillaTab");}</script>
+                <div style="margin: 20px 0;">
+                    <div style="display: flex; margin: 10px 0;">
+                        <div>
+                            <h2 style="display:inline-block;border: solid 1px var(--text-1);width: 38px;text-align: center; margin:  0 5px 0 0;">1</h2>
+                        </div>
+                        <p style="line-height: 38px;">次の問１〜問６に答えよ</p>
+                    </div>
+                    <div style="margin: 0 0 0 20px;">
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;">問1 マーク部の漢字の正しい読みを、次の&#9312 ~ &#9316のうちから一つ選べ。解答番号は1</h4>
+                            </div>
+                            <div style="margin: 0 0 0 20px;">
+                                <div style="display: flex;">
+                                    廊下で先生に<p class="seotext_00">会釈</p>する。
+                                </div>
+                                <div class="box_948091">
+                                    <p>&#9312あいしゃく</p>
+                                    <p>&#9313かいしゃく</p>
+                                    <p>&#9314かいしゅく</p>
+                                    <p>&#9315えしゃく</p>
+                                    <p>&#9316えしゅく</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;">問2 (ア)、(イ)のマーク部に当たる漢字と同じ漢字を用いるものを、次の各群の&#9312 ~ &#9316のうちからそれぞれ一つ選べ。解答番号は2・3</h4>
+                            </div>
+                            <div style="margin: 0 0 0 20px;">
+                                <div style="display: flex;">
+                                    <p style="margin: 0 10px 0 0;">(ア)</p><p class="seotext_00">カ</p>ドの運動は禁物だ。
+                                </div>
+                                <div class="box_948091">
+                                    <div style="display: flex;">
+                                        &#9312画壇のタイ<p class="seotext_00">カ</p>による名作を鑑賞する。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9313商品の<p class="seotext_00">カ</p>カクを設定する。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9314<p class="seotext_00">カ</p>ジョウな反応を示す。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9315日々情報機器がシン<p class="seotext_00">カ</p>する。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9316<p class="seotext_00">カ</p>レイな演技をする。
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin: 0 0 0 20px;">
+                                <div style="display: flex;">
+                                    <p style="margin: 0 10px 0 0;">(イ)</p>式典で勲章を<p class="seotext_00">オク</p>る。
+                                </div>
+                                <div class="box_948091">
+                                    <div style="display: flex;">
+                                        &#9312夏休み中の<p class="seotext_00">キ</p>ショウ時間を一定にする。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9313講義を聴いて、絵に<p class="seotext_00">キョウ</p>ミがわく。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9314<p class="seotext_00">コウ</p>カイの念にかられる。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9315約束の時間に<p class="seotext_00">チ</p>コクする。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9316株式を<p class="seotext_00">ゾウ</p>ヨする。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;display: flex;">問3 空欄&#12880;に入る語として最も適当なものを、後の&#9312 ~ &#9316のうちから一つ選べ。解答番号は4</h4>
+                            </div>
+                            <div style="margin: 0 0 0 10px;">
+                                <div style="display: flex;">
+                                    憎まれ口を&#12880;ようなことは控えたほうがよい。
+                                </div>
+                                <div class="box_948091">
+                                    <p>&#9312売る</p>
+                                    <p>&#9313得る</p>
+                                    <p>&#9314ひねる</p>
+                                    <p>&#9315ひらく</p>
+                                    <p>&#9316たたく</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;display: flex;">問4 「表面」と同じ構成で成り立っている熟語を、次の&#9312 ~ &#9316のうちから一つ選べ。解答番号は5</h4>
+                            </div>
+                            <div class="box_948091">
+                                <p>&#9312登山</p>
+                                <p>&#9313上下</p>
+                                <p>&#9314停止</p>
+                                <p>&#9315偉人</p>
+                                <p>&#9316造園</p>
+                            </div>
+                        </div>
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;display: flex;">問5 「故事成語「背水の陣」は、「わざと川を背にして陣を張り、勝利をおさめた」という故事がもとになっている。故事成語「背水の陣」の意味として最も適当なものを、次の&#9312 ~ &#9316のうちから一つ選べ。解答番号は6</h4>
+                            </div>
+                            <div class="box_948091">
+                                <p>&#9312決死の覚悟で事にあたること。</p>
+                                <p>&#9313背後の守りを固めること。</p>
+                                <p>&#9314危なくなったらすぐ逃げるべきだということ。</p>
+                                <p>&#9315逃げ道を確保することが重要だということ。</p>
+                                <p>&#9316勝ち目のない戦いは無駄だということ。</p>
+                            </div>
+                        </div>
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;display: flex;">問6 マーク部の敬語の使い方が適当でないものを、後の&#9312 ~ &#9316のうちから一つ選べ。解答番号は7</h4>
+                            </div>
+                            <div style="margin: 0 0 0 10px;">
+                                <div style="display: flex;">
+                                    <div class="box_948091">
+                                        <p>客：すみません、先日、商品の修理についてお願いをした者です。</p>
+                                        <div style="display: flex;">
+                                            店員：<p class="seotext_00">（A）お待ちしておりました</p>。弊社の担当の者が、その件について<p class="seotext_00">（B）おっしゃっていました</p>。<p class="seotext_00">（C）御依頼のあった</p>件につきまして、<p class="seotext_00">（D）お答えします</p>。
+                                        </div>
+                                        <p>客：よろしくお願いします。</p>
+                                        <div style="display: flex;">店員：お客様が<p class="seotext_00">（E）おっしゃった</p>不具合は、部品の消耗が原因でしたので、修理が可能です。</div>
+                                    </div>
+                                </div>
+                                <div class="box_948091">
+                                    <p>&#9312A</p>
+                                    <p>&#9313B</p>
+                                    <p>&#9314C</p>
+                                    <p>&#9315D</p>
+                                    <p>&#9316E</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin: 20px 0;">
+                    <div style="display: flex; margin: 10px 0;">
+                        <div>
+                            <h2 style="display:inline-block;border: solid 1px var(--text-1);width: 38px;text-align: center; margin:  0 5px 0 0;">2</h2>
+                        </div>
+                        <p>山下さんの高校では、国語総合の授業で「効果的な質問をしよう」という単元の学習をしている。今回は「私の街の自慢」というテーマの約一分間のスピーチを聞いた後に、聞き手から発表者に質問をすることになった。【山下さんのスピーチ】と【質疑応答の一部】を読んで、問に答えよ。</p>
+                    </div>
+                    <div style="margin: 0 0 0 20px;">
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;">【山下さんのスピーチ】</h4>
+                            </div>
+                            <div class="box_948091">
+                                私の街の自慢は農業が盛んなことです。私が住む南市は、野菜や果物の生産量が多いことで有名です。けれども、私が特に自慢したいのは、農業に携わる人たちがみな活気に満ちあふれているところです。
+                                <br>
+                                南市では三十年ほど前から、農家の人たちが専門家と協力して品種改良や生産方法の研究に積極的に取り組んできたそうです。また、それとともに品質管理や配送方法、販路の開拓など、質の高い農作物を、どうやってたくさんの人たちに届けるかという経営面での改革にも取り組んできたということです。
+                                <br>
+                                その努力が実り、今では南市の果物は一つのブランドとしての信頼を得ていますし、農家の人たちも誇りを持って農作業に従事しています。他の地域から農業経営について研修に来る人や、南市に移住して農業を始めるという人も増えてきました。
+                                <br>
+                                私はこの南市の農業がますます発展していってほしいと願っています。
+                            </div>
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;">【質疑応答の一部】</h4>
+                            </div>
+                            <div class="box_948091">
+                                <p>
+                                    谷川さん：「南市の農業への取組についてはどこかで調べたのですか。」
+                                </p>
+                                <p>
+                                    山下さん： 「私の家の近くに、農産物の直売所があります。農家の人たちが、自分の作った作物をそれぞれ並べて売っている所です。たくさんの農家の人たちに会えるので、そこで直接お話をうかがいました。」
+                                </p>
+                                <p>
+                                    谷川さん：「何人の人から話を聞いたのですか。」
+                                </p>
+                                <p>
+                                    山下さん：「詳しいお話をうかがったのは二人ですが、他にもその場にいた方たちが三人ほど、雑談のような形でいろいろな話をしてくださいました。」
+                                </p>
+                                <p>
+                                    大森さん：「南市の人たちが三十年も前からさまざまな改革に取り組んできたのはなぜですか。」
+                                </p>
+                                <p>
+                                    山下さん：「当時南市では、農家の後継者不足が問題になり始めていたそうです。そこで、農業人口の減少に歯止めをかけるためには、品質の高さを多くの消費者に認めてもらえるというやりがいを創り出すことと、経営面での安定が必要だと考え、農家の人たちが知恵を出し合って、改革に取り組んできたのだそうです。」
+                                </p>
+                                <p>
+                                    大森さん：「品質の高さを認めてもらえるような品種改良の成功例には何がありますか。」
+                                </p>
+                                <p>
+                                    山下さん： 「はい。最も大きな成功例は、メロンの品種改良だと思います。実が大きく糖度も高くて、しかも収穫量が気温などの気候条件に左右されにくいという特長があるそうです。ミナミスターという品種名が付けられ、ブランドとなっています。」
+                                </p>
+                                <p>
+                                    小林さん： 「品質管理について説明してください。」
+                                </p>
+                                <p>
+                                    山下さん： 「ミナミスターを例にとると、品質管理を徹底するために、特殊な糖度センサーを使って、基準を満たさないものは商品として出さないことにしているそうです。また、一つ一つの商品に、食べ頃を示す日付の付いたタグを付けることで、メロンに詳しくない人でもおいしく食べられるように工夫したそうです。こうしたことが、消費者からの信頼を得て、ブランド化に成功したのだと思います。」
+                                </p>
+                                <p>
+                                    小林さん： 「販路の拡大という点について説明してもらえますか。」
+                                </p>
+                                <p>
+                                    山下さん： 「以前はスーパーや直売所での販売だけでしたが、近年ではインターネットを利用したＰＲや通信販売なども行っているそうです。」
+                                </p>
+                                <p>
+                                    中原さん： 「ミナミスターの成功によって、農家以外の南市の人たちに何か影響はありましたか。」
+                                </p>
+                                <p>
+                                    山下さん：「はい。以前は農業以外に大きな産業がないということが、どちらかというとマイナスのイメージでしたが、今では南市と言えばメロン、と多くの市民が自慢するようになっています。農業の発展が市全体に自信を与えてくれている気がします。」
+                                </p>
+                                <p>
+                                    中原さん： 「メロン以外の作物についてはどうですか。」
+                                </p>
+                                <p>
+                                    山下さん： 「他にも季節ごとに人気の作物があります。イチゴも盛んに作られていて、旬の時期にはイチゴ狩りを楽しむ観光客でにぎわいます。」
+                                </p>
+                                <p>
+                                    上野さん：「イチゴについては、ミナミスターのような、独自に開発した品種はないのですか。」
+                                </p>
+                                <p>
+                                    山下さん：「独自に開発した品種はないようです。ただ、イチゴには多くの品種があるので、農家の人たちはそれらの特長を見極めて、環境や用途に合わせて品種を選んで栽培しているそうです。」
+                                </p>
+                                <p>
+                                    上野さん： 「どうすれば南市の農業はさらに発展すると思いますか。」
+                                </p>
+                                <p>
+                                    山下さん：「私にはまだよく分かりません。けれども、今回知ることができた取組を含めて、社会の変化に対応した農業経営のあり方について興味を持ったので、これから調べたり勉強したりしていこうと考えています。」
+                                </p>
+                            </div>
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;">問 クラスの生徒たちの質問について説明したものとして最も適当なものを、次の&#9312 ~ &#9316のうちから一つ選べ。解答番号は8</h4>
+                            </div>
+                            <div style="margin: 0 0 0 10px;">
+                                <div class="box_948091">
+                                    <p>&#9312谷川さんの質問は、スピーチの中で挙げられていた数値について、根拠を明らかにするための情報を引き出すものになっている。</p>
+                                    <p>&#9313大森さんの質問は、スピーチの内容や質問への回答について、さらに具体的な情報を引き出すものになっている。</p>
+                                    <p>&#9314小林さんの質問は、スピーチの中で使われていた専門的な用語について、その由来を明らかにするための情報を引き出すものになっている。</p>
+                                    <p>&#9315中原さんの質問は、スピーチの中で主張したことと質問への回答との間に、矛盾が生じていることを指摘するものになっている。</p>
+                                    <p>&#9316中原さんの質問は、スピーチの中で主張したことと質問への回答との間に、矛盾が生じていることを指摘するものになっている。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin: 20px 0;">
+                    <div style="display: flex; margin: 10px 0;">
+                        <div>
+                            <h2 style="display:inline-block;border: solid 1px var(--text-1);width: 38px;text-align: center; margin:  0 5px 0 0;">3</h2>
+                        </div>
+                        <p>本郷市にある南高校の交通委員会では、秋の交通安全週間にあわせて、交通マナーの向上を呼び掛ける文章を学校新聞に載せることにした。次に挙げる【交通マナーの向上を呼び掛ける文章（下書き）】は、委員長の野口さんが書いたものである。野口さんは、この下書きを書いた後、より説得力ある文章にするために【追加資料】に含まれる情報を集めた。これらを読んで、問1、問2に答えよ。</p>
+                    </div>
+                    <div style="margin: 0 0 0 20px;">
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;">【交通マナーの向上を呼び掛ける文章（下書き）】</h4>
+                            </div>
+                            <div class="box_948091">
+                                <div style="display: flex;">
+                                    <p>
+                                        本郷市のホームページによると、今年度の4月～7月に発生した自転車事故の発生件数は、早くも昨年度1年間の自転車事故発生件数に並んだそうだ。本校の生徒の通学手段で一番多いのは自転車通学だ。幸いなことに、本校では今年度になってから交通事故は発生していない。<p class="seotext_00">Ⅰ</p>だが、本郷市での自転車事故の発生件数が増えていることを考えれば、本校の生徒が今後事故に遭わないという保証はない。「交通事故ゼロ」の今の状態を維持できるよう、これからも各自で気をつけてほしい。
+                                    </p>
+                                </div>
+                                <div style="display: flex;">
+                                    <p>
+                                        自転車事故という言葉を聞くと、自転車と車との接触事故を思い浮かべることが多いかもしれない。だが、近年では、自転車と人との接触事故も増えてきているという。私たち高校生の「足」である自転車は、たしかに便利な道具である。だが同時に、凶器になる可能性があることも忘れてはならない。<p class="seotext_00">Ⅱ</p>
+                                    </p>
+                                </div>
+                                <div style="display: flex;">
+                                    <p>
+                                        本校の生徒の約75%が自転車を登下校の際に利用していて、【Ａ】幼いころから自転車に乗り慣れており、【Ｂ】慣れた自転車で慣れた道を走るため、【Ｃ】注意力が散漫になったまま自転車を運転しているケースもあるかもしれない。いつもの道ではあるけれど、注意して運転することが大切だ。<p class="seotext_00">Ⅲ</p>また、この「慣れ」から、傘差し運転、イヤホンをつけての運転などのような、危険な自転車の乗り方をしてしまうことはないだろうか。<p class="seotext_00">Ⅳ</p>このような行為は交通事故を誘発する行為であり、ただちにやめるべきである。
+                                    </p>
+                                </div>
+                                <div style="display: flex;">
+                                    <p>
+                                        来週から秋の交通安全週間が始まる。この期間中の朝7時半～8時には、交通量の多い駅前の交差点に市内の高校の交通委員が交替で立ち、通学する高校生の様子を見守ることになる。特に駅前のコンビニの前は、店の駐車場に入ろうとする 車が歩道を横切るので、そこを歩いて直進する高校生は注意が必要だ。<p class="seotext_00">Ⅴ</p>これを機に、交通マナーの向上を心がけようではないか。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin: 0 0 0 20px;">
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;">【追加資料】</h4>
+                            </div>
+                            <div class="box_948091">
+                                <img src="./assets/img/スクリーンショット 2023-11-17 16.17.32.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin: 0 0 0 20px;">
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;overflow: scroll;">問1 野口さんは、【追加資料】の内容を【交通マナーの向上を呼び掛ける文章（下書き）】に加えようとしている。【追加資料】から読み取って本文に加える内容（ア〜オ）と、それを入れる場所（Ⅰ ~ Ⅴ）として最も適当なものの組合せを、後の&#9312 ~ &#9316のうちから一つ選べ。解答番号は9</h4>
+                            </div>
+                            <div style="margin: 0 0 0 20px;">
+                                <div style="display: flex;">
+                                    廊下で先生に<p class="seotext_00">会釈</p>する。
+                                </div>
+                                <div class="box_948091">
+                                    <div style="display: flex;">
+                                        <p>ア、本郷市のホームページにあった「本郷市で昨年度に発生した交通事故の状況」によると、「人対車両事故」「車両単独事故」「車両相互事故」の発生割合は、どれかが圧倒的に高いわけではなく、どれもが三割台と似通った数値になっている。ここでの車両には自転車も含まれるので、私たちは自転車に乗る際に、「人対自転車の事故」だけでなく、「自転車単独の事故」や「自転車相互の事故」にも十分な注意が必要だと考える。</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>イ、本郷市のホームページにあった「本郷市で昨年度に発生した交通事故の状況」によると、「人対車両事故」「車両単独事故」「車両相互事故」の発生割合は、どれかが圧倒的に高いわけではなく、どれもが三割台と似通った数値になっている。ここでの車両には自転車も含まれるので、自転車単独の事故は、相手がいる事故と同じくらいに発生するということだ。自転車には十分注意して乗ることが必要だと考える。</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>ウ、本郷市のホームページにあった「本郷市で昨年度に発生した交通事故の状況」での「人対車両事故」の内訳によると、事故の相手の九割は車や二輪車であった。このことから、私たちは登下校の際に、特に車や二輪車に注意することが必要だと考える。</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>エ、本郷市のホームページにあった「本郷市で昨年度に発生した交通事故の状況」での「人対車両事故」の内訳によると、その九割は車や二輪車を相手とした事故であるが、残りの一割は自転車を相手とした、「人対自転車の事故」であった。自転車に乗る際には、車や二輪車との事故の被害者にならないようにするとともに、人との事故の加害者にならないように注意することが必要だと考える。</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>オ、本郷市のホームページにあった「本郷市で昨年度に発生した交通事故の状況」によると、「人対車両事故」が全体の約三割を占めている。本校の生徒の二十五％はバスや電車での通学をしており、最寄りの駅やバス停からは徒歩で学校に来ている。だから、私たちは徒歩の際にも交通事故に注意することが必要だと考える。</p>
+                                    </div>
+                                </div>
+                                <div class="box_948091">
+                                    <div style="display: flex;">
+                                        <p>&#9312<p class="seotext_00">Ⅰ</p>にウを入れる。</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>&#9313<p class="seotext_00">Ⅱ</p>にエを入れる。</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>&#9314<p class="seotext_00">Ⅲ</p>にオを入れる。</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>&#9315<p class="seotext_00">Ⅳ</p>にアを入れる。</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>&#9316<p class="seotext_00">Ⅴ</p>にイを入れる。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin: 15px 0;">
+                            <div style="display: flex; margin: 10px 0;">
+                                <h4 style="margin: 0 5px 0 0;">問2 傍線部を論理の展開を変えずに読みやすくするためには、どのように修正するとよいか。最も適当なものを、次の&#9312 ~ &#9316のうちから一つ選べ。解答番号は10</h4>
+                            </div>
+                            <div style="margin: 0 0 0 20px;">
+                                <div class="box_948091">
+                                    <div style="display: flex;">
+                                        &#9312【Ａ】の前で文を切って「〜利用している。」とし、その後に「私たちは」を入れる。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9313【Ａ】の前で文を切って「〜利用している。」とし、その後に「そのため」を入れる。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9314【Ｂ】の前で文を切って「〜乗り慣れている。」とし、その後に「あるいは」を入れる。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9315【Ｃ】の前で文を切って「〜走るためだ。」とし、その後に「また」を入れる。
+                                    </div>
+                                    <div style="display: flex;">
+                                        &#9316【Ｃ】の前で文を切って「〜走るためだ。」とし、その後に「私たちは」を入れる。
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- ページロードアニメーション-->
+    <div id="js-loader" class="loader"></div>
+    <script>
+        const loader = document.getElementById('js-loader');
+        window.addEventListener('load', () => {
+        const ms = 400;
+        loader.style.transition = 'opacity ' + ms + 'ms';
+
+        const loaderOpacity = function(){
+            loader.style.opacity = 0;
+        }
+        const loaderDisplay = function(){
+            loader.style.display = "none";
+        }
+            setTimeout(loaderOpacity, 1);
+            setTimeout(loaderDisplay, ms);
+        })
+    </script>
+
+    <!-- Glottologist読み込み -->
+    <script  src="../../../../../../../../site_assets/js/glottologist.js"></script>
+    <script>
+        const glot = new Glottologist();
+
+        // クッキーから言語情報を取得
+        if(navigator.cookieEnabled){ // クッキーがクッキーが使えるか確認
+            // クッキーを読み出す
+            const obj = convertCookieToObject(document.cookie);
+            if(obj !== ""){ //クッキーにデータがあるか
+                let jsonLang = obj.lang;
+                if(jsonLang = ""){
+                    glot.import("../../../../../../../../site_assets/json/glot-data.json").then(() => {
+                        glot.render();
+                    });
+                    let rootElement = document.documentElement;
+                    lang =(rootElement.lang);
+                    document.cookie = 'lang=' + lang+'; path=/';
+                }else{
+                    glot.render(jsonLang);
+                }
+            }else{
+                glot.import("../../../../../../../../site_assets/json/glot-data.json").then(() => {
+                    glot.render();
+                });
+                let rootElement = document.documentElement;
+                lang =(rootElement.lang);
+                document.cookie = 'lang=' + lang+'; path=/';
+            }
+        }
+
+        // Glottologistの処理
+
+        //JSONファイルの読み込み
+        document.addEventListener('DOMContentLoaded', function(){
+            // クッキーを読み出す
+            const obj = convertCookieToObject(document.cookie);
+            let jsonLang = obj.lang;
+            glot.import("../../../../../../../../site_assets/json/glot-data.json").then(() => {
+                glot.render(jsonLang);
+                setLangTextForm()
+            });
+            setLangTextForm()
+        });
+
+        /**
+        言語切り替え用のイベント処理
+        **/
+
+        const ar = document.getElementById('ar');
+        const zh = document.getElementById('zh');
+        const en = document.getElementById('en');
+        const id = document.getElementById('id');
+        const ja = document.getElementById('ja');
+        const ms = document.getElementById('ms');
+        const es = document.getElementById('es');
+
+        ar.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('ar');
+            langCiikiesSeve()
+        });
+        zh.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('zh');
+            langCiikiesSeve()
+        });
+        en.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('en');
+            langCiikiesSeve()
+        });
+        id.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('id');
+            langCiikiesSeve()
+        });
+        ja.addEventListener('click', e => {
+            e.preventDefault();
+            glot.render('ja');
+            langCiikiesSeve()
+        });
+        ms.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('ms');
+            langCiikiesSeve()
+        });
+        es.addEventListener('click', e => {
+            e.preventDefault()
+            glot.render('es');
+            langCiikiesSeve()
+        });
+
+        // ID翻訳
+        function setLangTextForm(){
+            let rootElement = document.documentElement;
+            lang =(rootElement.lang);
+
+        }
+
+        // 言語変更検知
+        function langCiikiesSeve(){
+            if(navigator.cookieEnabled){ // クッキーがクッキーが使えるか確認
+                let rootElement = document.documentElement;
+                lang =(rootElement.lang);
+                console.log(lang)
+                document.cookie = 'lang=' + lang+'; path=/';
+                // クッキーを読み出す
+                const obj = convertCookieToObject(document.cookie);
+            }
+            setLangTextForm()
+        };
+        //document.cookie = 'lang=; max-age=0'; // クッキーの削除
+
+
+
+        const class_mode_light = document.getElementById('class_light')
+        const class_mode_dark = document.getElementById('class_dark')
+
+        class_mode_light.addEventListener('click', e => {
+            e.preventDefault()
+            document.getElementById('html').className = ('light')
+            class_modeCiikiesSeve()
+        });
+        class_mode_dark.addEventListener('click', e => {
+            e.preventDefault()
+            document.getElementById('html').className = ('dark')
+            class_modeCiikiesSeve()
+        });
+
+
+        // クラスモード変更検知
+        function class_modeCiikiesSeve(){
+            if(navigator.cookieEnabled){ // クッキーがクッキーが使えるか確認
+                let rootElement = document.documentElement;
+                html_class =(rootElement.className);
+                document.cookie = 'html_class=' + html_class+'; path=/';
+                // クッキーを読み出す
+                const obj = convertCookieToObject(document.cookie);
+            }
+            setLangTextForm()
+        }
+
+
+        // クッキーの解析
+        function convertCookieToObject(cookies) {
+            const cookieItem = cookies.split(';');
+            const obj = {};
+            cookieItem.forEach((item) => {
+                // 「=」で分解
+                const element = item.split('=');
+                // キーを取得
+                const key = element[0].trim();
+                // バリューを取得
+                const value = decodeURIComponent(element[1]);
+                // 保存
+                obj[key] = value;
+            });
+            return obj;
+        }
+    </script>
+</html>
