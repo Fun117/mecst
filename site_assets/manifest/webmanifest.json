@@ -1,6 +1,6 @@
 {
-    "name": "SpeingCodeEditor",
-    "short_name": "SpeingCode",
+    "name": "MECST",
+    "short_name": "MECST",
     "icons": [
         {
             "src": "../assets/logo/CitohubIcon-192px.png",
@@ -18,22 +18,6 @@
             "sizes": "512x512"
         }
     ],
-    "screenshots" : [
-        {
-            "src": "../assets/img/screenshots//SpeingCodeEditor-Home-1640*2207px.PNG",
-            "sizes": "1640x2207",
-            "type": "image/png",
-            "platform": "iPad Air 4",
-            "label": "SpeedCode app home screen"
-        },
-        {
-            "src": "../assets/img/screenshots/SpeingCodeEditor-Home-1918*994px.png",
-            "sizes": "1918x994",
-            "type": "image/png",
-            "platform": "PC",
-            "label": "SpeedCode app home screen"
-        }
-    ],
     "id": "../../",
     "start_url": "../../",
     "background_color": "#262626",
@@ -43,5 +27,5 @@
     ],
     "display": "standalone",
     "theme_color": "#1a1a1a",
-    "description": "A web app that makes it easy to write code."
+    "description": "MECST app"
 }
