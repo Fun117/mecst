@@ -203,7 +203,7 @@
                                 </div>
                             </div>
                             <div style="text-align: center; margin: 0 0 50px 0;">
-                                <button class="user_select_off button_blue_light_animation_2" style="margin: 15px 0 0 20px; width: 250px;height: 30px;line-height: 5px;" onclick="links_pdf_exam_2021_1_national_language()">試験問題をPDFで見る</button>
+                                <button class="user_select_off button_blue_light_animation_2" style="margin: 0px; width: 250px;height: 30px;line-height: 5px;" onclick="links_pdf_exam_2021_1_national_language()">試験問題をPDFで見る</button>
                             </div>
                         </div>
                     </div>
@@ -221,6 +221,31 @@
                 <form>
                     <div class="legacy-container">
                         <div class="card-column">
+                            <div class="tool-group user_select_off">
+                                <a class="tool-card text-\[1\.17em\]">
+                                    <h3>氏名</h3>
+                                </a>
+                                <div class="tool-body">
+                                    <div class="tool-card">
+                                        <legend>記入欄</legend>
+                                        <div style="margin: 0 0 0 5px; width: 80%;">
+                                            <input id="1-0_1" type="text" name="1-0" placeholder="山田 太郎" class="input_text_form" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <style>
+                                    .input_text_form {
+                                        border-radius: 5px;
+                                        padding: 5px;
+                                        outline: none;
+                                        border: 0;
+                                        width: 100%;
+                                        background: var(--background-1);
+                                        color: var(--text-1);
+                                        overflow: scroll;
+                                    }
+                                </style>
+                            </div>
                             <div class="tool-group user_select_off">
                                 <a class="tool-card text-\[1\.17em\]">
                                     <h3>1</h3>
@@ -720,6 +745,7 @@
             </div>
         </main>
         <script>
+            var exam_name = "";
             var exam_point = 0;
             var exam_point_lank = "C";
             var exam_all_data = "";
@@ -762,6 +788,10 @@
 
 
             var exam_answer = {
+                "1-0": {
+                    "answer":"",
+                    "point":"0"
+                },
                 "1-1": {
                     "answer":"1-1_4",
                     "point":"2"
@@ -871,24 +901,33 @@
                         var data_4710401 = exam_answer[data_4710470].point
                         data_4710401 = data_4710401 - 0;
                         //console.log('点数' + data_4710401)
-                        if(data_4710470 === '1-22'){
-                            if(data_4710471 === data_4710400){
-                                output = `${output}` + `"` + `${entry[0]}":{"answer":"ok","point":"` + data_4710401 + `"}`
-                                exam_point = exam_point + data_4710401;
-                                //console.log('point : ' + exam_point)
+                        if(data_4710470 === '1-0'){
+                            if(data_4710471 === ''){
+                                exam_name = 'guest';
                             }else{
-                                output = `${output}` + `"` + `${entry[0]}":{"answer":"no","point":"0"}`
+                                exam_name = data_4710471;
                             }
                         }else{
-                            if(data_4710471 === data_4710400){
-                                output = `${output}` + `"` + `${entry[0]}":{"answer":"ok","point":"` + data_4710401 + `"},`
-                                exam_point = exam_point + data_4710401;
-                                //console.log('point : ' + exam_point)
+                            if(data_4710470 === '1-22'){
+                                if(data_4710471 === data_4710400){
+                                    output = `${output}` + `"` + `${entry[0]}":{"answer":"ok","point":"` + data_4710401 + `"}`
+                                    exam_point = exam_point + data_4710401;
+                                    //console.log('point : ' + exam_point)
+                                }else{
+                                    output = `${output}` + `"` + `${entry[0]}":{"answer":"no","point":"0"}`
+                                }
                             }else{
-                                output = `${output}` + `"` + `${entry[0]}":{"answer":"no","point":"0"},`
+                                if(data_4710471 === data_4710400){
+                                    output = `${output}` + `"` + `${entry[0]}":{"answer":"ok","point":"` + data_4710401 + `"},`
+                                    exam_point = exam_point + data_4710401;
+                                    //console.log('point : ' + exam_point)
+                                }else{
+                                    output = `${output}` + `"` + `${entry[0]}":{"answer":"no","point":"0"},`
+                                }
                             }
                         }
                     }
+
                     output = '{' + output + '}';
                     output = JSON.parse(output);
                     exam_all_data = output;
@@ -913,6 +952,7 @@
             var FullYear = d.getFullYear()
             window.setInterval(exam_func, 1);
             function exam_func(){
+                document.getElementById('exam_name_box').innerHTML = exam_name;
                 document.getElementById('FullYear_box').innerHTML = FullYear;
                 document.getElementById('exam_point_lank_box').innerHTML = exam_point_lank;
                 document.getElementById('exam_point_box').innerHTML = exam_point;
@@ -940,6 +980,10 @@
                                             </div>
                                             <div class="tool-group">
                                                 <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>氏名：</h2>
+                                                    <h2 id="exam_name_box" style="color: var(--text-3);"></h2>
+                                                </a>
+                                                <a class="tool-card text-\[1\.17em\]">
                                                     <h2>評点：</h2>
                                                     <h2 id="exam_point_lank_box" style="color: var(--text-3);"></h2>
                                                 </a>
@@ -961,13 +1005,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div style="text-align: center; margin: 0 0 10px 0;">
+                                    <button class="user_select_off button_blue_light_animation_2" style="margin: 0px; width: 250px;height: 30px;line-height: 5px;" onclick="links_exam_2021_1_national_language_exam01()">試験結果ページを開く</button>
+                                    <script>function links_exam_2021_1_national_language_exam01(){window.open(`./assets/exam/?year=` + FullYear + `&name=` + exam_name + `&evaluate=` + exam_point_lank + `&score=` + exam_point);}</script>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="legacy-container" style="margin-bottom: 100px;">
+                <div class="legacy-container" style="margin-top: 50px; margin-bottom: 100px;">
                     <div style="text-align: center;">
-                        <button class="user_select_off button_blue_light_animation_1" onclick="exam_page_step_btn(0),scrollToTop()">ページを閉じる</button>
+                        <button class="user_select_off button_blue_light_animation_1" style="margin: 0 20px;" onclick="exam_page_step_btn(0),scrollToTop()">ページを閉じる</button>
                     </div>
                 </div>
             </div>
@@ -991,7 +1039,7 @@
             <div class="file-view">
                 <h1>国語</h1>
                 <button class="user_select_off button_blue_light_animation_2" style="margin: 15px 0 0 20px; width: 250px;height: 30px;line-height: 5px;" onclick="links_pdf_exam_2021_1_national_language()">試験問題をPDFで見る</button>
-                <script>function links_pdf_exam_2021_1_national_language(){window.open("https://www.mext.go.jp/content/20230426-mxt_syogai02-mext_1411255_01kokugo.pdf", "mozillaTab");}</script>
+                <script>function links_pdf_exam_2021_1_national_language(){window.open("https://www.mext.go.jp/content/20230426-mxt_syogai02-mext_1411255_01kokugo.pdf");}</script>
                 <div style="margin: 20px 0;">
                     <div style="display: flex; margin: 10px 0;">
                         <div>

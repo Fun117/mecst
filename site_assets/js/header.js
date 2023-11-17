@@ -8,7 +8,7 @@ function startSc(){ // サイトのロード時に実行
 }
 
 function links_github(){
-    window.open("https://github.com/Fun117/", "mozillaTab");
+    window.open("https://github.com/Fun117/");
 }
 
 function FixedAnime(){ // スクロール制御
