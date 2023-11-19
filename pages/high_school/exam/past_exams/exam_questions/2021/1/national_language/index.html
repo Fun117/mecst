@@ -26,6 +26,8 @@
         <script src="https://kit.fontawesome.com/9b65a345ec.js" crossorigin="anonymous"></script>
         <!-- 国旗アイコンcss-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.3/css/flag-icons.min.css" rel="stylesheet">
+        <!-- 暗号 -->
+        <script src="../../../../../../../../site_assets/js/cmd/crypto.js"></script>
     </head>
     <body onload="startSc()">
         <header id="headerBackground" class="header--TuwRF">
@@ -203,7 +205,8 @@
                                 </div>
                             </div>
                             <div style="text-align: center; margin: 0 0 50px 0;">
-                                <button class="user_select_off button_blue_light_animation_2" style="margin: 0px; width: 250px;height: 30px;line-height: 5px;" onclick="links_pdf_exam_2021_1_national_language()">試験問題をPDFで見る</button>
+                                <button class="user_select_off button_blue_light_animation_2" style="margin: 0 10px; width: 250px;height: 30px;line-height: 5px;" onclick="links_pdf_exam_2021_1_national_language()">試験問題をPDFで見る</button>
+                                <button class="user_select_off button_blue_light_animation_2" style="margin: 0 10px; width: 250px;height: 30px;line-height: 5px;" onclick="links_exam_data_2021_1_national_language()">試験回答データを見る</button>
                             </div>
                         </div>
                     </div>
@@ -745,6 +748,19 @@
             </div>
         </main>
         <script>
+
+            // LINKS
+            function links_pdf_exam_2021_1_national_language(){
+                window.open("https://www.mext.go.jp/content/20230426-mxt_syogai02-mext_1411255_01kokugo.pdf");
+            }
+
+            function links_exam_data_2021_1_national_language(){
+                window.open("./assets/exam_data/");
+            }
+
+
+
+
             var exam_name = "";
             var exam_point = 0;
             var exam_point_lank = "C";
@@ -757,9 +773,9 @@
                 exam_page_step = page_step
                 exam_page_step =  exam_page_step - 0;
                 if(page_step === 0){
-                    document.getElementById('html_exam_page_step_0').style.display = 'block'
-                    document.getElementById('html_exam_page_step_1').style.display = 'none'
-                    document.getElementById('html_exam_page_step_2').style.display = 'none'
+                        document.getElementById('html_exam_page_step_0').style.display = 'block'
+                        document.getElementById('html_exam_page_step_1').style.display = 'none'
+                        document.getElementById('html_exam_page_step_2').style.display = 'none'
                 }else{
                     if(page_step === 1){
                         document.getElementById('html_exam_page_step_0').style.display = 'none'
@@ -774,6 +790,9 @@
                             document.getElementById('html_exam_page_step_0').style.display = 'none'
                             document.getElementById('html_exam_page_step_1').style.display = 'none'
                             document.getElementById('html_exam_page_step_2').style.display = 'block'
+
+                            //試験データ表示
+                            exam_func()
                         }
                     }
                 }
@@ -948,14 +967,98 @@
                 false,
             );
 
+            // スプレットシートからデータを取得
+            var exam_user_status = "";
+            var exam_user_status_active = "";
+            var exam_user_status_highest_rating = "";
+            var exam_user_status_highest_score = "";
+            var exam_user_status_mean_ating = "";
+            var exam_user_status_mean_score = "";
+
+            function getJSON(url_getJSON,mode){
+                getJsonURL = url_getJSON;
+                getJsonUrl(getJsonURL,mode);
+            }
+
+            function getJsonUrl(jsonUrl,mode){
+                if(jsonUrl == ""){
+                    document.getElementById("getJsonData").innerHTML = Error
+                }else{
+                    fetch(jsonUrl)
+                        .then(result => result.json())
+                        .then((output) => {
+                        const jsonData = JSON.stringify(output);
+                        //console.log(jsonData);
+                        let obj = jsonData;
+                        Object = obj
+                        var getJsonUrl_obj = obj;
+                        if(mode === 'exam_user_status'){
+                            exam_user_status = JSON.parse(getJsonUrl_obj);
+                            exam_user_status_active = (exam_user_status['0'].active)
+                            exam_user_status_highest_rating = (exam_user_status['0'].highest_rating)
+                            var post_data_lank
+                            if(exam_point_lank === "A"){
+                                post_data_lank = 1
+                            }else{
+                                if(exam_point_lank === "B"){
+                                    post_data_lank = 2
+                                }else{
+                                    if(exam_point_lank === "C"){
+                                        post_data_lank = 3
+                                    }
+                                }
+                            }
+                            if(exam_user_status_highest_rating < post_data_lank){
+                                fetch('https://script.google.com/macros/s/AKfycbxB_D8bbIou4axl8oA2mrsmb8uRMPYj0ThBLnRo13qaC6BiQ7ITVmBXAo22jLPiWLOW/exec?mode=highest_rating_count_data&highest_rating=' + post_data_lank, { mode: 'no-cors' });
+                            }
+                            if(exam_user_status_highest_rating === 1){
+                                exam_user_status_highest_rating = "A"
+                            }else{
+                                if(exam_user_status_highest_rating === 2){
+                                    exam_user_status_highest_rating = "B"
+                                }else{
+                                    if(exam_user_status_highest_rating === 3){
+                                        exam_user_status_highest_rating = "C"
+                                    }
+                                }
+                            }
+                            exam_user_status_highest_score = (exam_user_status['0'].highest_score)
+                            if(exam_user_status_highest_score < exam_point){
+                                fetch('https://script.google.com/macros/s/AKfycbxB_D8bbIou4axl8oA2mrsmb8uRMPYj0ThBLnRo13qaC6BiQ7ITVmBXAo22jLPiWLOW/exec?mode=highest_score_count_data&highest_score=' + exam_point, { mode: 'no-cors' });
+                            }
+                            exam_user_status_mean_ating = (exam_user_status['0'].mean_ating)
+                            exam_user_status_mean_score = (exam_user_status['0'].mean_score)
+
+                            // 統計試験データ表示
+                            document.getElementById('exam_user_status_FullYear_box').innerHTML = FullYear;
+                            document.getElementById('exam_user_status_active_box').innerHTML = exam_user_status_active;
+                            document.getElementById('exam_user_status_highest_rating_box').innerHTML = exam_user_status_highest_rating;
+                            document.getElementById('exam_user_status_highest_score_box').innerHTML = exam_user_status_highest_score;
+                            document.getElementById('exam_user_status_mean_ating_box').innerHTML = exam_user_status_mean_ating;
+                            document.getElementById('exam_user_status_mean_score_box').innerHTML = exam_user_status_mean_score;
+                        }
+                    }).catch(err => console.error(err));
+                };
+            }
+
+            // 試験結果表示処理
             let d = new Date();
             var FullYear = d.getFullYear()
-            window.setInterval(exam_func, 1);
+            //window.setInterval(exam_func, 1);
             function exam_func(){
-                document.getElementById('exam_name_box').innerHTML = exam_name;
-                document.getElementById('FullYear_box').innerHTML = FullYear;
-                document.getElementById('exam_point_lank_box').innerHTML = exam_point_lank;
-                document.getElementById('exam_point_box').innerHTML = exam_point;
+                // 1秒後に実行
+                setTimeout(() => {
+                    // ユーザー試験データ表示
+                    document.getElementById('exam_name_box').innerHTML = exam_name;
+                    document.getElementById('FullYear_box').innerHTML = FullYear;
+                    document.getElementById('exam_point_lank_box').innerHTML = exam_point_lank;
+                    document.getElementById('exam_point_box').innerHTML = exam_point;
+                    // ユーザー試験データを送信
+                    fetch('https://script.google.com/macros/s/AKfycbxB_D8bbIou4axl8oA2mrsmb8uRMPYj0ThBLnRo13qaC6BiQ7ITVmBXAo22jLPiWLOW/exec?mode=active_count_data', { mode: 'no-cors' });
+
+                    //　過去データ取得
+                    getJSON(`https://script.google.com/macros/s/AKfycbxB_D8bbIou4axl8oA2mrsmb8uRMPYj0ThBLnRo13qaC6BiQ7ITVmBXAo22jLPiWLOW/exec?mode=0`,'exam_user_status')
+                }, 500);
             }
         </script>
         <main id="html_exam_page_step_2" style="display: none;">
@@ -1006,8 +1109,8 @@
                                     </div>
                                 </div>
                                 <div style="text-align: center; margin: 0 0 10px 0;">
-                                    <button class="user_select_off button_blue_light_animation_2" style="margin: 0px; width: 250px;height: 30px;line-height: 5px;" onclick="links_exam_2021_1_national_language_exam01()">試験結果ページを開く</button>
-                                    <script>function links_exam_2021_1_national_language_exam01(){window.open(`./assets/exam/?year=` + FullYear + `&name=` + exam_name + `&evaluate=` + exam_point_lank + `&score=` + exam_point);}</script>
+                                    <button class="user_select_off button_blue_light_animation_2" style="margin: 0 10px; width: 250px;height: 30px;line-height: 5px;" onclick="links_exam_2021_1_national_language_exam01()">試験結果ページを開く</button>
+                                    <button class="user_select_off button_blue_light_animation_2" style="margin: 0 10px; width: 250px;height: 30px;line-height: 5px;" onclick="links_exam_data_2021_1_national_language()">試験回答データを見る</button>
                                 </div>
                             </div>
                         </div>
@@ -1016,6 +1119,58 @@
                 <div class="legacy-container" style="margin-top: 50px; margin-bottom: 100px;">
                     <div style="text-align: center;">
                         <button class="user_select_off button_blue_light_animation_1" style="margin: 0 20px;" onclick="exam_page_step_btn(0),scrollToTop()">ページを閉じる</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="legacy-container">
+                    <div class="card-column">
+                        <div class="tool-group user_select_off">
+                            <div class="tool-card text-\[1\.17em\]" style="display:table; margin: 30px 10px;">
+                                <div style="text-align: center;">
+                                    <h2>令和3年度第1回高等学校卒業程度認定試験　回答データ</h2>
+                                    <p>サーバーの契約変更前のデータは同期されていません</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div class="legacy-container">
+                                        <div class="card-column">
+                                            <div class="tool-group">
+                                                <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>年度：</h2>
+                                                    <h2 id="exam_user_status_FullYear_box" style="color: var(--text-3);"></h2>
+                                                </a>
+                                                <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>受験者数：</h2>
+                                                    <h2 id="exam_user_status_active_box" style="color: var(--text-3);"></h2>
+                                                </a>
+                                            </div>
+                                            <div class="tool-group">
+                                                <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>最高評点：</h2>
+                                                    <h2 id="exam_user_status_highest_rating_box" style="color: var(--text-3);"></h2>
+                                                </a>
+                                                <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>最高点数：</h2>
+                                                    <h2 id="exam_user_status_highest_score_box" style="color: var(--text-3);"></h2>
+                                                    <h2 style="color: var(--diff-renamed)">/100</h2>
+                                                </a>
+                                            </div>
+                                            <div class="tool-group">
+                                                <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>平均評点：</h2>
+                                                    <h2 id="exam_user_status_mean_ating_box" style="color: var(--text-3);"></h2>
+                                                </a>
+                                                <a class="tool-card text-\[1\.17em\]">
+                                                    <h2>平均点数：</h2>
+                                                    <h2 id="exam_user_status_mean_score_box" style="color: var(--text-3);"></h2>
+                                                    <h2 style="color: var(--diff-renamed)">/100</h2>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1039,7 +1194,6 @@
             <div class="file-view">
                 <h1>国語</h1>
                 <button class="user_select_off button_blue_light_animation_2" style="margin: 15px 0 0 20px; width: 250px;height: 30px;line-height: 5px;" onclick="links_pdf_exam_2021_1_national_language()">試験問題をPDFで見る</button>
-                <script>function links_pdf_exam_2021_1_national_language(){window.open("https://www.mext.go.jp/content/20230426-mxt_syogai02-mext_1411255_01kokugo.pdf");}</script>
                 <div style="margin: 20px 0;">
                     <div style="display: flex; margin: 10px 0;">
                         <div>
@@ -1401,6 +1555,50 @@
             </div>
         </div>
     </body>
+    <script>
+        var encode1_fun_data
+        var encode2_fun_data
+
+        // encode & decode
+        function encode1(fun_pass_phrase1,fun_data1) {
+            // パスフレーズ（暗号鍵）
+            let passPhrase1 = fun_pass_phrase1
+            // 暗号化したい元のデータ
+            let data1 = fun_data1
+            let utf8_plain = CryptoJS.enc.Utf8.parse(data1);
+            //暗号データが入力されてるか
+            if( data1 == ""){
+                console.log(Error)
+            }else{
+                // 暗号化
+                let encrypted = CryptoJS.AES.encrypt( utf8_plain, passPhrase1 );
+                // 表示
+                encode1_fun_data = encrypted;
+            }
+        }
+        function decode2(fun_pass_phrase2,fun_data1){
+            // パスフレーズ（暗号鍵）
+            let passPhrase2 = fun_pass_phrase2
+            // 暗号済みデータ
+            let encrypted = fun_data1
+            //複合変数にデータがあるか
+            if( encrypted == ""){
+                console.log(Error)
+            }else{
+                // 復号化
+                let decrypted = CryptoJS.AES.decrypt( encrypted , passPhrase2 );
+                let txt_dexrypted = decrypted.toString(CryptoJS.enc.Utf8);
+                // 表示
+                encode2_fun_data = txt_dexrypted;
+            }
+        }
+
+
+        function links_exam_2021_1_national_language_exam01(){
+            var open_url_data = (`year=` + FullYear + `&name=` + exam_name + `&evaluate=` + exam_point_lank + `&score=` + exam_point);
+            window.open(`./assets/exam/?` + open_url_data);
+        }
+    </script>
     <!-- ページロードアニメーション-->
     <div id="js-loader" class="loader"></div>
     <script>

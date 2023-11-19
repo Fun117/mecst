@@ -98,10 +98,9 @@
         </header>
         <div>
             <div class="tool-group user_select_off">
-                <div class="tool-card text-\[1\.17em\] user_select_off" style="display:table; margin: 30px 10px;">
+                <div class="tool-card text-\[1\.17em\]" style="display:table; margin: 30px 10px;">
                     <div style="text-align: center;">
-                        <h1 style="font-size: 50px;">国語</h1>
-                        <h2>令和3年度第1回高等学校卒業程度認定試験問題回答結果</h2>
+                        <h2>令和3年度第1回高等学校卒業程度認定試験　回答データ</h2>
                     </div>
                     <div style="text-align: center;">
                         <div class="legacy-container">
@@ -109,32 +108,34 @@
                                 <div class="tool-group">
                                     <a class="tool-card text-\[1\.17em\]">
                                         <h2>年度：</h2>
-                                        <h2 id="FullYear_box" style="color: var(--text-3);"></h2>
+                                        <h2 id="exam_user_status_FullYear_box" style="color: var(--text-3);"></h2>
+                                    </a>
+                                    <a class="tool-card text-\[1\.17em\]">
+                                        <h2>受験者数：</h2>
+                                        <h2 id="exam_user_status_active_box" style="color: var(--text-3);"></h2>
                                     </a>
                                 </div>
                                 <div class="tool-group">
                                     <a class="tool-card text-\[1\.17em\]">
-                                        <h2>氏名：</h2>
-                                        <h2 id="exam_name_box" style="color: var(--text-3);"></h2>
+                                        <h2>最高評点：</h2>
+                                        <h2 id="exam_user_status_highest_rating_box" style="color: var(--text-3);"></h2>
                                     </a>
                                     <a class="tool-card text-\[1\.17em\]">
-                                        <h2>評点：</h2>
-                                        <h2 id="exam_point_lank_box" style="color: var(--text-3);"></h2>
-                                    </a>
-                                    <a class="tool-card text-\[1\.17em\]">
-                                        <h2>点数：</h2>
-                                        <h2 id="exam_point_box" style="color: var(--text-3);"></h2>
+                                        <h2>最高点数：</h2>
+                                        <h2 id="exam_user_status_highest_score_box" style="color: var(--text-3);"></h2>
                                         <h2 style="color: var(--diff-renamed)">/100</h2>
                                     </a>
                                 </div>
-                                <div style="text-align: left; margin: 20px 0;">
-                                    <p style="margin: 0 0 10px 0;">注意事項</p>
-                                    <div style="margin: 8px;">
-                                        <div style="display: flex;">
-                                            <h4 style="margin: 0 10px 0 0;">1</h4>
-                                            <p>評点は100点満点で、A：80 ~ 100、B：60 ~ 79、C：合格点 ~ 59</p>
-                                        </div>
-                                    </div>
+                                <div class="tool-group">
+                                    <a class="tool-card text-\[1\.17em\]">
+                                        <h2>平均評点：</h2>
+                                        <h2 id="exam_user_status_mean_ating_box" style="color: var(--text-3);"></h2>
+                                    </a>
+                                    <a class="tool-card text-\[1\.17em\]">
+                                        <h2>平均点数：</h2>
+                                        <h2 id="exam_user_status_mean_score_box" style="color: var(--text-3);"></h2>
+                                        <h2 style="color: var(--diff-renamed)">/100</h2>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -144,61 +145,67 @@
         </div>
     </body>
     <script>
-        var encode1_fun_data
-        var encode2_fun_data
+        // スプレットシートからデータを取得
+        var exam_user_status = "";
+        var exam_user_status_active = "";
+        var exam_user_status_highest_rating = "";
+        var exam_user_status_highest_score = "";
+        var exam_user_status_mean_ating = "";
+        var exam_user_status_mean_score = "";
 
-        // encode & decode
-        function encode1(fun_pass_phrase1,fun_data1) {
-            // パスフレーズ（暗号鍵）
-            let passPhrase1 = fun_pass_phrase1
-            // 暗号化したい元のデータ
-            let data1 = fun_data1
-            let utf8_plain = CryptoJS.enc.Utf8.parse(data1);
-            //暗号データが入力されてるか
-            if( data1 == ""){
-                console.log(Error)
-            }else{
-                // 暗号化
-                let encrypted = CryptoJS.AES.encrypt( utf8_plain, passPhrase1 );
-                // 表示
-                encode1_fun_data = encrypted;
-            }
+        function getJSON(url_getJSON,mode){
+            getJsonURL = url_getJSON;
+            getJsonUrl(getJsonURL,mode);
         }
-        function decode2(fun_pass_phrase2,fun_data2){
-            // パスフレーズ（暗号鍵）
-            let passPhrase2 = fun_pass_phrase2
-            // 暗号済みデータ
-            let encrypted = fun_data2
-            //複合変数にデータがあるか
-            if( encrypted == ""){
-                console.log(Error)
+
+        function getJsonUrl(jsonUrl,mode){
+            if(jsonUrl == ""){
+                document.getElementById("getJsonData").innerHTML = Error
             }else{
-                // 復号化
-                let decrypted = CryptoJS.AES.decrypt( encrypted , passPhrase2 );
-                let txt_dexrypted = decrypted.toString(CryptoJS.enc.Utf8);
-                // 表示
-                encode2_fun_data = txt_dexrypted;
-            }
+                fetch(jsonUrl)
+                    .then(result => result.json())
+                    .then((output) => {
+                    const jsonData = JSON.stringify(output);
+                    //console.log(jsonData);
+                    let obj = jsonData;
+                    Object = obj
+                    var getJsonUrl_obj = obj;
+                    if(mode === 'exam_user_status'){
+                        exam_user_status = JSON.parse(getJsonUrl_obj);
+                        exam_user_status_active = (exam_user_status['0'].active)
+                        exam_user_status_highest_rating = (exam_user_status['0'].highest_rating)
+                        if(exam_user_status_highest_rating === 1){
+                            exam_user_status_highest_rating = "A"
+                        }else{
+                            if(exam_user_status_highest_rating === 2){
+                                exam_user_status_highest_rating = "B"
+                            }else{
+                                if(exam_user_status_highest_rating === 3){
+                                    exam_user_status_highest_rating = "C"
+                                }
+                            }
+                        }
+                        exam_user_status_highest_score = (exam_user_status['0'].highest_score)
+                        exam_user_status_mean_ating = (exam_user_status['0'].mean_ating)
+                        exam_user_status_mean_score = (exam_user_status['0'].mean_score)
+
+                        // 統計試験データ表示
+                        document.getElementById('exam_user_status_FullYear_box').innerHTML = FullYear;
+                        document.getElementById('exam_user_status_active_box').innerHTML = exam_user_status_active;
+                        document.getElementById('exam_user_status_highest_rating_box').innerHTML = exam_user_status_highest_rating;
+                        document.getElementById('exam_user_status_highest_score_box').innerHTML = exam_user_status_highest_score;
+                        document.getElementById('exam_user_status_mean_ating_box').innerHTML = exam_user_status_mean_ating;
+                        document.getElementById('exam_user_status_mean_score_box').innerHTML = exam_user_status_mean_score;
+                    }
+                }).catch(err => console.error(err));
+            };
         }
-    </script>
-    <script>
-        // URLを取得
-        let url = new URL(window.location.href);
 
-        // URLSearchParamsオブジェクトを取得
-        let params = url.searchParams;
-
-
-        // ?year=2023&evaluate=A&score=0
-        var exam_year = (params.get('year'));
-        var exam_name = (params.get('name'));
-        var exam_evaluate = (params.get('evaluate'));
-        var exam_score = (params.get('score'));
-
-        document.getElementById('FullYear_box').innerHTML = exam_year;
-        document.getElementById('exam_name_box').innerHTML = exam_name;
-        document.getElementById('exam_point_lank_box').innerHTML = exam_evaluate;
-        document.getElementById('exam_point_box').innerHTML = exam_score;
+        // 試験結果表示処理
+        let d = new Date();
+        var FullYear = d.getFullYear()
+        //　過去データ取得
+        getJSON(`https://script.google.com/macros/s/AKfycbxB_D8bbIou4axl8oA2mrsmb8uRMPYj0ThBLnRo13qaC6BiQ7ITVmBXAo22jLPiWLOW/exec?mode=0`,'exam_user_status')
     </script>
     <!-- ページロードアニメーション-->
     <div id="js-loader" class="loader"></div>
